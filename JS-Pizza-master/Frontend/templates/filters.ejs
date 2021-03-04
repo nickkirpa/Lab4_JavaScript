@@ -1,0 +1,5 @@
+<ul class="nav nav-pills">
+    <% filters.forEach(function(filter){ %>
+        <li><a data-toggle="pill" href="#filter-<%= filter.key %>"><%= filter.title %></a></li>
+    <% }); %>
+</ul>
