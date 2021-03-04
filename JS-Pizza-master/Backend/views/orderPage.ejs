@@ -1,0 +1,64 @@
+<% include common/header.ejs %>
+<%- include('common/cart.ejs', (typeof cartOptions === 'undefined' ? {} : cartOptions)) %>
+
+<div id="main" class="container-fluid">
+    <h1>Order Form</h1>
+
+    <div class="row">
+        <div class="col-md-8">
+            <form id="order-form" action="/api/create-order/" method="post" class="form-horizontal">
+                <div class="form-group name-group">
+                    <label for="input-name" class="col-sm-2 control-label">Name</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="name" id="input-name" placeholder="Input name...">
+                    </div>
+                    <div class="help-block name-help-block"></div>
+                </div>
+                <div class="form-group phone-group">
+                    <label for="input-phone" class="col-sm-2 control-label">Phone</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="phone" id="input-phone" placeholder="Input phone...">
+                    </div>
+                    <div class="help-block phone-help-block"></div>
+                </div>
+                <div class="form-group addr-group">
+                    <label for="input-addr" class="col-sm-2 control-label">Address</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="addr" id="input-addr" placeholder="Input address...">
+                    </div>
+                    <div class="help-block addr-help-block"></div>
+                </div>
+            </form>
+        </div>
+
+        <div class="col-md-4">
+            <div class="information">
+                <span>Інформація про замовлення</span>
+            </div>
+            <div class="time-of-delivering">
+                <span>Приблизний час доставки:</span>
+                <span id="output-time">невідомий</span>
+            </div>
+            <div class="address-of-destination">
+                <span>Адреса доставки:</span>
+                <span id="output-addr">невідома</span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group">
+            <button class="btn btn-warning" id="order-btn">Order!</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="map map-order" id="order-map"></div>
+    </div>
+    <div class="row">
+        <!-- місце для віджету -->
+        <div class="liqpay" id="liqpay"></div>
+        <!-- піключаємо скрипт -->
+    </div>
+</div>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAfJuHGijdwRqdHAyw0XhrR0iEjEev8wjo"></script>
+<script	src="//static.liqpay.ua/libjs/checkout.js"></script>
+<% include common/footer.ejs %>
