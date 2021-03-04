@@ -1,0 +1,14 @@
+<% include common/header.ejs %>
+<%- include('common/cart.ejs', (typeof cartOptions === 'undefined' ? {} : cartOptions)) %>
+
+<div id="main" class="container-fluid">
+    <div class="p-title">
+    <span class="page-title">Усі піци</span>
+    </div>
+    <div class="row" id="pizza_filters">
+    </div>
+    <div class="row" id="pizza_list">
+    </div>
+</div>
+
+<% include common/footer.ejs %>
