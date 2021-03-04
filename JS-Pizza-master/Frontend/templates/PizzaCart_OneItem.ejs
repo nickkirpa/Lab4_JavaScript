@@ -1,14 +1,30 @@
-<div>
+<%
+function sizeString(size){
+    return size == 'big_size' ? 'Велика' : (size == 'small_size' ? 'Маленька' : null);
+}
+%>
+<div class="pizza-cart-card">
     <%= pizza.title %> (<%= size %>)
-    <div class = "pars">
-        <div class="size"><img src="assets/images/size-icon.svg" /><%= pizza[size].size %> </div>
-        <div class="weight"><img src="assets/images/weight.svg" /><%= pizza[size].weight %> </div>
-    </div>
     <div>Ціна: <%= pizza[size].price %> грн.</div>
+    <div class="size"><img src="assets/images/size-icon.svg" /><%= pizza[size].size %> </div>
+    <div class="weight"><img src="assets/images/weight.svg" /><%= pizza[size].weight %> </div>
     <div>
         <button class="btn btn-danger minus">-</button>
-        <span class="label label-default"><%= quantity %></span>
+        <span class="label label-default pizza-cart-quantity"><%= quantity %></span>
         <button class="btn btn-success plus">+</button>
     </div>
     <img class="pizza-part" src="<%= pizza.icon %>"/>
+</div>
+    <% if(editable) { %>
+    <div class="pizza-cart-count">
+        <button class="btn btn-danger minus">-</button>
+        <span class="label label-default pizza-cart-quantity"><%= quantity %></span>
+        <button class="btn btn-success plus">+</button>
+        <button class="btn btn-info delete">x</button>
+    </div>
+    <% } else { %>
+    <div class="pizza-cart-count pizza-cart-const">
+        <span class="label label-default pizza-cart-quantity"><%= quantity %> піца</span>
+    </div>
+    <% } %>
 </div>
