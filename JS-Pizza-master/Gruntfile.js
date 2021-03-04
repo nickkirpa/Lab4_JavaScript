@@ -60,4 +60,8 @@ module.exports = function(grunt) {
         ]
     );
 
+    // Added by lanivna on 02.12.17
+    grunt.loadNpmTasks('grunt-serve');
+
+
 };
