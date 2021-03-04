@@ -1,0 +1,25 @@
+<div id="cart-head" class="order">
+    <span class="order-title"> Замовлення </span>
+    <span class="orange-circle total total-items">0</span>
+    <span class="clean-order-title cart-clear"> Очистити замовлення </span>
+</div>
+<div id="cart-empty" class="cart-empty">
+    <div class="text">
+    </div>
+</div>
+<div id="cart-items" class="cart-items"></div>
+<div id="cart-summary" class="cart-footer">
+    <div class="text">
+        Кількість товарів: <span class="total total-quantity">0</span>
+    </div>
+
+    <div class="text">
+        Загальна сума: <span class="total total-sum">0</span> грн.
+    </div>
+    <% var pageId = $('body').data('page-id'); %>
+    <% if(pageId == 'mainPage') { %>
+    <a href="/order.html" class="btn btn-warning order">Замовити</a>
+    <% } else if(pageId == 'orderPage') { %>
+    <a href="/index.html" class="btn btn-info redact">Редагувати</a>
+    <% } %>
+</div>
