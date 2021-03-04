@@ -1,0 +1,15 @@
+.pizza-cart-card {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  padding: 10px 40px 10px 15px;
+
+  .pizza-cart-img {
+    @cartImgSize: 94px;
+    position:absolute;
+    width: @cartImgSize;
+    height: @cartImgSize;
+    left: (300 - 0.5*@cartImgSize);
+    top: 10px;
+  }
+}
